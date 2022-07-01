@@ -3,12 +3,12 @@ const app = express();
 import Mongoose from 'mongoose';
 import User from './models/user.js';
 import Room from './models/room.js'
+import user from './models/user.js';
+import userRoutes from  './routes/userRoutes.js';
 const PORT = 5000;
 
 
-app.get('/', (req, res) => {
-  res.send('hello world server')
-})
+app.use('/user', userRoutes )
 
 Mongoose.connect('mongodb+srv://MERNProject:Matrice2022@cluster0.zbesc.mongodb.net/escape-game?retryWrites=true&w=majority',
   { useNewUrlParser: true,

@@ -8,8 +8,6 @@ const roomSchema = new mongoose.Schema({
     capacity : String,
     description: String,
     disponibility : Boolean,
-
-
   })
 
 export default mongoose.model('Room', roomSchema);
