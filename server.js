@@ -1,9 +1,9 @@
 import express from 'express';
 const app = express();
 import Mongoose from 'mongoose';
-import User from './models/user.js';
-import Room from './models/room.js'
-import user from './models/user.js';
+//import User from './models/user.js';
+//import Room from './models/room.js'
+//import user from './models/user.js';
 import userRoutes from  './routes/userRoutes.js';
 const PORT = 5000;
 
