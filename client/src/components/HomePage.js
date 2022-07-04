@@ -1,14 +1,14 @@
 import './App.css';
 import React from 'react';
+import React from 'react';
+import NavBar from '../src/component/Homepage'
 
-function App() {
+function Homepage() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="Homepage">
       
-      </header>
     </div>
   );
 }
 
-export default App;
+export default Homepage;
