@@ -1,6 +1,7 @@
 import  express  from "express";
 const router = express.Router();
-import Room from "../models/booking.js" 
+import Booking from "../models/booking.js";
+import Mongoose from "mongoose";
 
 
 // **Create**/////////////////////////////////////////////////////
