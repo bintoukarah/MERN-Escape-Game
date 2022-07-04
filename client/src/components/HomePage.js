@@ -1,13 +1,12 @@
-import './App.css';
 import React from 'react';
-import React from 'react';
-import NavBar from '../src/component/Homepage'
+import { Link } from 'react-router-dom';
 
 function Homepage() {
   return (
-    <div className="Homepage">
-      
-    </div>
+    <nav>
+      <Link to="Cards">Cards</Link>
+      <Link to="Rooms">Rooms</Link>
+    </nav>
   );
 }
 
