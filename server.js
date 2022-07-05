@@ -1,10 +1,18 @@
 import express from 'express';
 const app = express();
 import Mongoose from 'mongoose';
+<<<<<<< HEAD
 //import User from './models/user.js';
 //import Room from './models/room.js'
 //import user from './models/user.js';
+=======
+import User from './models/user.js';
+import Room from './models/room.js'
+import Booking from './models/booking.js';
+>>>>>>> d1f7150a57726120c93aa55191d28a23ddd6a40b
 import userRoutes from  './routes/userRoutes.js';
+import roomRoutes from  './routes/roomRoutes.js';
+import bookingRoutes from  './routes/bookingRoutes.js';
 const PORT = 5000;
 
 

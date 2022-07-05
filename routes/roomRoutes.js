@@ -1,19 +1,21 @@
 import  express  from "express";
-import Mongoose from "mongoose";
 const router = express.Router();
-import User from "../models/user.js"
+import Room from "../models/room.js" 
+import mongoose from "mongoose";
+
 
 // **Create**/////////////////////////////////////////////////////
 router.post("/", async (req, res) => {
 try {
-const newUser = new User({
-  admin:req.body.admin,
-  firstname:req.body.firstname,
-  lastname:req.body.lastname,
-  email:req.body.email,
-  password:req.body.hashPass,
+const newRoom= new Room({
+
+  name : req.body.name,
+  price: req.body.price,
+  capacity: req.body.capacity,
+  description: req.body.description,
+  disponibility: req.body.disponibility,
 });
-await newUser.save();
+await newRoom.save();
 res.json({ message: "Created" });
 } catch (error) {
 res.status(400).json({ error: error.message });
@@ -23,8 +25,8 @@ res.status(400).json({ error: error.message });
 // **ReadAll**/////////////////////////////////////////////////////
 router.get("/", async (req, res) => {
 try {
-const users = await User.find();
-res.json(users);
+const room = await Room.find();
+res.json(room);
 } catch (error) {
 res.status(400).json({ error: error.message });
 }
@@ -33,8 +35,8 @@ res.status(400).json({ error: error.message });
 // **ReadId**/////////////////////////////////////////////////////////
 router.get("/:id", async (req, res) => {
 try {
-const user = await User.findById(req.params.id);
-res.json(user);
+const room = await Room.findById(req.params.id);
+res.json(room);
 } catch (error) {
 res.status(400).json({ error: error.message });
 }
@@ -44,7 +46,7 @@ res.status(400).json({ error: error.message });
 router.put('/:id', async (req, res) => {
 let updates = req.body // nous definissons une variable égale à l'ensemble du req.body
 try {
-if(await User.findByIdAndUpdate({_id:req.params.id},updates,{new:true})){
+if(await Room.findByIdAndUpdate({_id:req.params.id},updates,{new:true})){
   res.json({ message: "Updated" });
 } else {
   res.status(400).json({ message: "Missing id" });
@@ -59,7 +61,7 @@ router.delete('/:id', async (req, res) => {
 const id = req.params.id;
 
 try {
-if(await User.findByIdAndDelete({_id:req.params.id})){
+if(await Room.findByIdAndDelete({_id:req.params.id})){
   res.json({ message: "Removed" });
 } else {
   res.status(400).json({ message: "Missing id" });
@@ -72,7 +74,7 @@ res.status(400).json({ error: error.message });
 // **DeleteAll**
 router.delete('/', async (req, res) => {
 try {
-if(await User.deleteMany()){
+if(await Room.deleteMany()){
   res.json({ message: "Deleted Collection " });
 } else {
   res.status(400).json({ message: "Missing id" });
@@ -83,85 +85,6 @@ res.status(400).json({ error: error.message });
 });
 
 export default router
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
