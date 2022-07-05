@@ -1,24 +1,22 @@
 import  express  from "express";
 const router = express.Router();
 import Room from "../models/room.js" 
+router.use(express.json())
+router.use(express.urlencoded({ extended: true}))
 
 
 // **Create**/////////////////////////////////////////////////////
 router.post("/", async (req, res) => {
-try {
-const newRoom= new Room({
-
-  name : req.body.name,
-  price: req.body.price,
-  capacity: req.body.capacity,
-  description: req.body.description,
-  disponibility: req.body.disponibility,
-});
-await newRoom.save();
-res.json({ message: "Created" });
-} catch (error) {
-res.status(400).json({ error: error.message });
-}
+  try {
+    const newRoom = new Room(
+      req.body
+    );
+    await newRoom.save();
+    res.json(newRoom);
+  } 
+  catch (error) {
+    res.status(400).json({ error: error.message });
+  }
 });
 
 // **ReadAll**/////////////////////////////////////////////////////

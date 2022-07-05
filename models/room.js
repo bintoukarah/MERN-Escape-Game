@@ -2,12 +2,11 @@ import mongoose from 'mongoose'
 
 
 const roomSchema = new mongoose.Schema({
-    image: String,
-    name : String,
-    price: Number,
-    capacity : String,
-    description: String,
-    disponibility : Boolean,
+    Name : String,
+    Price: Number,
+    Capacity : Number,
+    Description: String,
+    Disponibility : Boolean
   })
 
 export default mongoose.model('Room', roomSchema);
