@@ -7,12 +7,12 @@ import Room from "../models/booking.js"
 router.post("/", async (req, res) => {
 try {
 const newBooking= new Booking({
-
   type : req.body.type,
   required: req.body.required,
   maxLenght: req.body.maxLenght,
   minLenght: req.body.minLenght,
 });
+
 await newBooking.save();
 res.json({ message: "Created" });
 } catch (error) {
