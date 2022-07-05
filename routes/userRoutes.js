@@ -1,5 +1,4 @@
 import  express  from "express";
-import Mongoose from "mongoose";
 const router = express.Router();
 import User from "../models/user.js"
 

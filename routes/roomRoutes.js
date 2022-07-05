@@ -1,7 +1,6 @@
 import  express  from "express";
 const router = express.Router();
 import Room from "../models/room.js" 
-import mongoose from "mongoose";
 
 
 // **Create**/////////////////////////////////////////////////////
