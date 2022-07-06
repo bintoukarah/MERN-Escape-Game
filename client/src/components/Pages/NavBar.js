@@ -5,7 +5,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-// import SignIn from "./SignIn.js";
+// import SignIn from "./SignIn";
 
 export default function ButtonAppBar() {
   return (
@@ -15,7 +15,8 @@ export default function ButtonAppBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <Link to="/">Escape Game</Link>
           </Typography>
-          <Button color="inherit"><Link to="SignIn"></Link>Connection</Button>
+         
+          <Button color="inherit"><Link to="SignIn">Connection</Link></Button>
         </Toolbar>
       </AppBar>
     </Box>
