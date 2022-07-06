@@ -5,6 +5,7 @@ import NavBar from "./components/Pages/NavBar";
 import HomePage from "./components/Pages/HomePage";
 import Cards from "./components/Pages/Cards";
 import Rooms from "./components/Pages/Rooms";
+import SignIn from "./components/Pages/SignIn";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -14,6 +15,9 @@ root.render(
         <Route path="/" element={<HomePage />} />
         <Route path="/Cards" element={<Cards />} />
         <Route path="/Rooms" element={<Rooms />} />
+      <Route path="/SignIn" element={<SignIn />} />
+
+        
       </Routes>
     </BrowserRouter>
 );
