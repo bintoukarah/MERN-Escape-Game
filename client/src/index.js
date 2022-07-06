@@ -9,15 +9,13 @@ import SignIn from "./components/Pages/SignIn";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/Cards" element={<Cards />} />
-        <Route path="/Rooms" element={<Rooms />} />
+  <BrowserRouter>
+    <NavBar />
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/Cards" element={<Cards />} />
+      <Route path="/Rooms" element={<Rooms />} />
       <Route path="/SignIn" element={<SignIn />} />
-
-        
-      </Routes>
-    </BrowserRouter>
+    </Routes>
+  </BrowserRouter>
 );

@@ -15,6 +15,7 @@ export default function ButtonAppBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <Link to="/">Escape Game</Link>
           </Typography>
+         
           <Button color="inherit"><Link to="SingIn">Connection</Link></Button>
         </Toolbar>
       </AppBar>
