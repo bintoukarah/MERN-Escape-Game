@@ -1,34 +1,42 @@
-import React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import Grid from '@mui/material/Grid';
 
+import Cards from './Cards'
 
-export default function Cards() {
-  return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        component="img"
-        height="140"
-        image="/static/images/cards/contemplative-reptile.jpg"
-        alt="green iguana"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small"><Link to="Rooms">Rooms</Link></Button>
-      </CardActions>
-    </Card>
-  );
+export default function HomePage() {
+
+  const [rooms, setRooms] = useState([])
+
+  useEffect(()=>{
+      getAllRooms()
+  },[])
+
+  const getAllRooms = () => {
+    fetch('http://localhost:5000/rooms')
+    .then((response) => {
+        console.log('API CONNECTED')
+        return response.json()
+    })
+    .then((result) => {
+        setRooms(result)
+        console.log('SET API UPDATE')
+        return result
+    })
+}
+
+useEffect(() => {
+  getAllRooms()
+    }, [])
+
+return (
+    <Grid className='HomeGridHome' container spacing={0} margin-bottom={40}>
+            {rooms.map((room) => {
+                return(
+                    <Grid item xs={4} >
+                        <Cards room={room}/>
+                    </Grid>
+                )
+            })}
+     </Grid>
+)
 }
