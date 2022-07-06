@@ -27,7 +27,7 @@ export default function Cards() {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">All Card</Button>
+        <Button size="small"><Link to="Rooms">Rooms</Link></Button>
       </CardActions>
     </Card>
   );
