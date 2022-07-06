@@ -16,7 +16,7 @@ export default function ButtonAppBar() {
             <Link to="/">Escape Game</Link>
           </Typography>
          
-          <Button color="inherit"><Link to="SingIn">Connection</Link></Button>
+          <Button color="inherit"><Link to="SignIn">Connection</Link></Button>
         </Toolbar>
       </AppBar>
     </Box>
