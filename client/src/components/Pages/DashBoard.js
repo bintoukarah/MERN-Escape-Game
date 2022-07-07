@@ -1,15 +1,14 @@
 
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
-import CameraIcon from '@mui/icons-material/PhotoCamera';
 import CssBaseline from '@mui/material/CssBaseline';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Link } from "react-router-dom";
+
 
 
 const theme = createTheme();
@@ -18,14 +17,6 @@ export default function Album() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppBar position="relative">
-        <Toolbar>
-          <CameraIcon sx={{ mr: 2 }} />
-          <Typography variant="h6" color="inherit" noWrap>
-            Album layout
-          </Typography>
-        </Toolbar>
-      </AppBar>
       <main>
         {/* Hero unit */}
         <Box
@@ -43,7 +34,7 @@ export default function Album() {
               color="text.primary"
               gutterBottom
             >
-              Album layout
+              Hello MATRICE
             </Typography>
             <Typography variant="h5" align="center" color="text.secondary" paragraph>
               Something short and leading about the collection below—its contents,
@@ -55,9 +46,13 @@ export default function Album() {
               direction="row"
               spacing={2}
               justifyContent="center"
-            >
-              <Button variant="contained">Main call to action</Button>
-              <Button variant="outlined">Secondary action</Button>
+            > 
+              <Button variant="contained">
+                <Link to="Cards" className='linkWhite'>Creat new room</Link> 
+              </Button>
+              <Button variant="outlined">
+                <Link to="Cards" className='linkBlue'>Home Page</Link> 
+              </Button>
             </Stack>
           </Container>
         </Box>

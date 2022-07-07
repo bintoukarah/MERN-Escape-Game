@@ -1,3 +1,11 @@
 .remove_textD {
     text-decoration: none;
 }
+.linkWhite {
+    text-decoration: none;
+    color: white;
+}
+.linkBlue {
+    text-decoration: none;
+    color: blue;
+}

@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import { NavLink } from 'react-router-dom';
 import Logo from "../img/logo_escape.png"
+import "../Pages/App.css"
 // import SignIn from "./SignIn";
 
 export default function ButtonAppBar() {
@@ -15,11 +16,11 @@ export default function ButtonAppBar() {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, }}>
-            <NavLink to="/"  sx={{width: "2rem", height: "2rem", marginRight: "0.5rem"}}>
+            <NavLink to="/"  sx={{width: "2rem", height: "2rem", marginRight: "0.5rem"}} >
               <img src={Logo} alt="home"/>
             </NavLink>
           </Typography>
-          <Button color="inherit" sx={{ textDecoration:'none',fontWeight :'bold', color:"white" }}><Link to="SignIn">Connection</Link></Button>
+          <Button color="inherit" sx={{ textDecoration:'none',fontWeight :'bold', color:"white" }}><Link to="SignIn"  className='linkWhite'>Connection</Link></Button>
         </Toolbar>
       </AppBar>
     </Box>

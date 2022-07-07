@@ -8,6 +8,8 @@ import SignIn from "./components/Pages/SignIn";
 import SignUp from "./components/SignUp";
 import OneRoom from "./components/Pages/OneRoom";
 import Booking from "./components/Pages/Booking";
+import DashBoard from "./components/Pages/DashBoard";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -20,6 +22,7 @@ root.render(
       <Route path="/rooms/:_id/Booking" element={<Booking />} />
       <Route path="/signIn" element={<SignIn />} />
       <Route path="/signUp" element={<SignUp />} />
+      <Route path="/dashboard" element={<DashBoard />} />
 
     </Routes>
   </BrowserRouter>
