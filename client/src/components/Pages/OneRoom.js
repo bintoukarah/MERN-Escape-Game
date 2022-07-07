@@ -7,8 +7,12 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-
-
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
+import "../Pages/App.css"
 
 export default function OneRoom() {
   let params = useParams();
@@ -59,9 +63,23 @@ export default function OneRoom() {
               </Typography>
             </CardContent>
           </Box>
+          <Box>
+          <FormControl>
+            <FormLabel id="demo-radio-buttons-group-label"><strong>Disponibilités : </strong></FormLabel>
+            <RadioGroup
+              aria-labelledby="demo-radio-buttons-group-label"
+              defaultValue="firstHoraire"
+              name="radio-buttons-group"
+            >
+              <FormControlLabel value="firstHoraire" control={<Radio />} label="10H - 14H" />
+              <FormControlLabel value="secondHoraire" control={<Radio />} label="14H - 18H" />
+              <FormControlLabel value="thirdHoraire" control={<Radio />} label="18H - 22H" />
+            </RadioGroup>
+          </FormControl>
+          </Box>
           <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
             <CardActions>
-              <Button size="small"><Link to="Booking">Share</Link></Button>
+              <Button size="small" variant='outlined'><Link to="Booking" className='remove_textD'>Resversation</Link></Button>
             </CardActions>
           </Box>
         </Box>
