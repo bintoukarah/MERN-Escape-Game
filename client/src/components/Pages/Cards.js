@@ -1,44 +1,32 @@
 
 import * as React from 'react';
-import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import { Link } from "react-router-dom";
+import "../Pages/Cards.css"
+
 
 export default function Cards(props) {
-
   return (
-      <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, height: '100%', display: 'flex', flexDirection: 'column', paddingTop: 10, marginLeft: 10, }}>
       <CardMedia
         component="img"
-        height="140"
-        image={props.room.image}
+        paddingTop="56.25%"
+        height="200"
+        image={props.room.Image}
         alt="escape game"
       />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {props.room.Name}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-         {props.room.Capacity}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-         {props.room.Description}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          <p>{props.room.Price} €</p>
+      <CardContent >
+        <Typography
+          variant="h5"
+          component="div"
+          sx={{ textAlign: 'center', paddingBottom: 3 }}
+        >
+          <Link to="Rooms" className='remove_textD'><strong>{props.room.Name}</strong></Link>
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-      </Card> 
+    </Card>
   );
 }
-
-
-
-
