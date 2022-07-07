@@ -48,10 +48,10 @@ export default function Album() {
               justifyContent="center"
             > 
               <Button variant="contained">
-                <Link to="Cards" className='linkWhite'>Creat new room</Link> 
+                <Link to="NewRoom" className='linkWhite'>Creat new room</Link> 
               </Button>
               <Button variant="outlined">
-                <Link to="Cards" className='linkBlue'>Home Page</Link> 
+                <Link to="/" className='linkBlue'>Home Page</Link> 
               </Button>
             </Stack>
           </Container>

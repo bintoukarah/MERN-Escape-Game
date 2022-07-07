@@ -21,6 +21,8 @@ export default function ButtonAppBar() {
             </NavLink>
           </Typography>
           <Button color="inherit" sx={{ textDecoration:'none',fontWeight :'bold', color:"white" }}><Link to="SignIn"  className='linkWhite'>Connection</Link></Button>
+          <Button color="inherit" sx={{ textDecoration:'none',fontWeight :'bold', color:"white" }}><Link to="DashBoard"  className='linkWhite'>D</Link></Button>
+
         </Toolbar>
       </AppBar>
     </Box>

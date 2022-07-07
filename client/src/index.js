@@ -9,6 +9,7 @@ import SignUp from "./components/SignUp";
 import OneRoom from "./components/Pages/OneRoom";
 import Booking from "./components/Pages/Booking";
 import DashBoard from "./components/Pages/DashBoard";
+import NewRoom from "./components/Pages/NewRoom";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -22,7 +23,9 @@ root.render(
       <Route path="/rooms/:_id/Booking" element={<Booking />} />
       <Route path="/signIn" element={<SignIn />} />
       <Route path="/signUp" element={<SignUp />} />
-      <Route path="/dashboard" element={<DashBoard />} />
+      <Route path="/dashboard" exact element={<DashBoard />} />
+      <Route path="/dashboard/newRoom" element={<NewRoom />} />
+
 
     </Routes>
   </BrowserRouter>
