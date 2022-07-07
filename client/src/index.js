@@ -4,20 +4,25 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/Pages/NavBar";
 import HomePage from "./components/Pages/HomePage";
 import Cards from "./components/Pages/Cards";
-import Rooms from "./components/Pages/Rooms";
 import SignIn from "./components/Pages/SignIn";
 import SignUp from "./components/SignUp";
+import OneRoom from "./components/Pages/OneRoom";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <NavBar />
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/Cards" element={<Cards />} />
-      <Route path="/Rooms" element={<Rooms />} />
-      <Route path="/SignIn" element={<SignIn />} />
-      <Route path="/SignUp" element={<SignUp />} />
+      <Route path="/" exact element={<HomePage />} />
+      <Route path="/cards" element={<Cards />} />
+      <Route path="/rooms/:_id" element={<OneRoom />}>
+      </Route>
+      <Route path="/signIn" element={<SignIn />} />
+      <Route path="/signUp" element={<SignUp />} />
+
     </Routes>
   </BrowserRouter>
 );
+
+

@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Grid from '@mui/material/Grid';
 
-import Cards from './Cards'
+
+import Cards from './Cards';
+
+
 
 export default function HomePage() {
 
@@ -20,14 +23,10 @@ export default function HomePage() {
     .then((result) => {
         setRooms(result)
         console.log('SET API UPDATE')
-        return result
     })
 }
 
-useEffect(() => {
-  getAllRooms()
-    }, [])
-
+    
 return (
     <Grid className='HomeGridHome' container spacing={0} margin-bottom={40}>
             {rooms.map((room) => {

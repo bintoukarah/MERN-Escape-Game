@@ -24,7 +24,9 @@ export default function Cards(props) {
           component="div"
           sx={{ textAlign: 'center', paddingBottom: 3 }}
         >
-          <Link to="Rooms" className='remove_textD'><strong>{props.room.Name}</strong></Link>
+          <Link to={`/rooms/${props.room._id}`} className='remove_textD'>
+            <strong>{props.room.Name}</strong>
+          </Link>
         </Typography>
       </CardContent>
     </Card>
